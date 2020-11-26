@@ -27,3 +27,10 @@
 
 //document.querySelector("h1").style.backgroundColor = "red";
 //document.querySelector("p").style.color="orange";
+
+//function aulaDeJavaScript (){
+   
+   // document.body.classList.add("bold");
+//}
+
+//aulaDeJavaScript();
