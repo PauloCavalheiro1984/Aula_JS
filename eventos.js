@@ -99,11 +99,18 @@ estado.addEventListener("change", function(){
     console.log("mudou");
 });
 
-let erro = true;
+let senha = document.getElementById("exampleInputPassword1");
 
 submit.addEventListener("submit", function(e){
-    if(erro === true){
-    e.preventDefault();
-    console.log("não mandou");
+    if (senha.value === ""){
+        e.preventDefault();
+        alert("preencha sua senha");
     }
+    else if (senha.value.length <5){
+        e.preventDefault();
+        alert("senha com poucos caracteres");
+    }
+    else{
+        alert("enviado com sucesso")
+    }    
 });
