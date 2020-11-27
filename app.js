@@ -34,3 +34,19 @@
 //}
 
 //aulaDeJavaScript();
+
+//window.onload = function(){}  nesse método, quando vc seleciona o evento novamente, o proximo substitui o anterior
+
+document.getElementById("pars").style.color="red";
+
+window.addEventListener("load", function() {
+
+    let verifica = document.getElementById("pars");
+
+    verifica.addEventListener("click", function () {
+        alert("clicou!");
+        this.style.color = "orange"
+    })
+
+
+})
