@@ -68,6 +68,7 @@
 let nome = document.getElementById("exampleInputEmail1");
 let estado = document.getElementById("exampleInputPassword1");
 let submit = document.getElementById("submeter");
+let erros = document.getElementById("erro");
 
 nome.addEventListener("focus", function(){
     console.log("entrou no campo nome");
@@ -102,15 +103,31 @@ estado.addEventListener("change", function(){
 let senha = document.getElementById("exampleInputPassword1");
 
 submit.addEventListener("submit", function(e){
+    
+    let errors = [];
+    let ulerros = document.querySelector("div.erro ul");
+
+    ulerros.innerHTML = "";
+    
+    if (nome.value === ""){
+        errors.push("preencha o email");
+    }
+
     if (senha.value === ""){
-        e.preventDefault();
-        alert("preencha sua senha");
+        errors.push("preencha a senha");
     }
-    else if (senha.value.length <5){
+    
+    if (errors.length > 0){
         e.preventDefault();
-        alert("senha com poucos caracteres");
     }
+
     else{
-        alert("enviado com sucesso")
-    }    
+        alert("enviado com sucesso");
+    }
+    
+    for (let i = 0; i < errors.length; i++){
+        ulerros.innerHTML += "<li>"+ errors[i] + "</li>";
+    }
+
+    
 });
