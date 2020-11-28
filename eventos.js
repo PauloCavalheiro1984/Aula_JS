@@ -108,7 +108,7 @@ submit.addEventListener("submit", function(e){
     let ulerros = document.querySelector("div.erro ul");
 
     ulerros.innerHTML = "";
-    
+    n  
     if (nome.value === ""){
         errors.push("preencha o email");
     }
