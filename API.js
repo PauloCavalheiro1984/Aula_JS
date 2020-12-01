@@ -10,4 +10,28 @@ if (vernome === null && veridade === null){
 
 
 
+let cep = document.querySelector(".cep");
+
+cep.addEventListener("change", function(){
+    let estado = document.querySelector(".estado");
+    let cidade = document.querySelector(".cidade");
+    let bairro = document.querySelector(".bairro");
+    let cepAtual = cep.value;
+
+    fetch(`https://viacep.com.br/ws/${cepAtual}/json/`)
+    .then(response => response.json())
+    .then(response => {
+        estado.value = response.uf;
+        cidade.value = response.localidade;
+        bairro.value = response.bairro;
+    })
+    .catch(error => {
+        estado.value = "CEP INVALIDO";
+        cidade.value = "";
+        bairro.value = "";
+        alert("CEP INCORRETO");
+    })
+})
+
+
 
